@@ -1,6 +1,76 @@
+:root {
+  --color-hover: royalblue;
+  --color: royalblue;
+  --visited-color: DarkViolet;
+}
+
 html {
   font-family: Arial, Helvetica, sans-serif;
   body {
     margin: 0;
+  }
+  [data-layout] {
+    a {
+      align-items: center;
+      color: inherit;
+      display: flex;
+      text-decoration: none;
+      transition: padding .2s ease-in-out;
+      &:hover {
+        color: var(--color-hover);
+      }
+    }
+    .icon {
+      fill: currentColor;
+      height: 1rem;
+      width: 1rem;
+    }
+    /* DENSIDAD DE INFORMACIÓN */
+    &.comfortable,
+    &.compact,
+    &.min,
+    &.normal,
+    &.comfortable {
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+    }
+    &.comfortable {
+      a {
+        padding: 1rem 1.5rem;
+        gap: 1.5rem;
+        & > span:first-child {
+          padding-left: 2.5rem;
+        }
+      }
+    }
+    &.compact {
+      a {
+        padding: .25rem .5rem;
+        gap: .5rem;
+        & > span:first-child {
+          padding-left: 1.5rem;
+        }
+      }
+    }
+    &.min {
+      a {
+        padding: 0 .25rem;
+        gap: .25rem;
+        & > span:first-child {
+          padding-left: 1.25rem;
+        }
+      }
+    }
+    &.normal {
+      a {
+        padding: .5rem 1rem;
+        gap: 1rem;
+        & > span:first-child {
+          padding-left: 2rem;
+        }
+      }
+    }
   }
 }

@@ -5,7 +5,13 @@ function init() {
   $inputRadio.forEach((input) => {
     input.addEventListener('change', event => {
       const value = event.target.value;
-      $menu.classList.remove('min', 'compact', 'normal', 'comfortable');
+      const name = event.target.name;
+      if (name === 'density') {
+        $menu.classList.remove('min', 'compact', 'normal', 'comfortable');
+      }
+      if (name === 'mode') {
+        $menu.classList.remove('menu', 'tree', 'dropdown', 'panel', 'list', 'carousel', 'grid', 'table', 'fullscreen');
+      }
       $menu.classList.add(value ? value : '');
     });
   });

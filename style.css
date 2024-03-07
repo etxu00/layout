@@ -17,13 +17,49 @@ html {
       text-decoration: none;
       transition: padding .2s ease-in-out;
       &:hover {
-        color: var(--color-hover);
+        color: var(--color);
       }
+    }
+    span {
+      white-space: nowrap;
     }
     .icon {
       fill: currentColor;
       height: 1rem;
       width: 1rem;
+    }
+    /* MODOS */
+    &.tree {
+      ul {
+        padding: 0 0 0 1rem !important;
+      }
+    }
+    &.menu {
+      & > ul {
+        display: flex;
+        li {
+          position: relative;
+          &:hover > ul {
+            display: block;
+          }
+        }
+        > li {
+          & > ul {
+            top: 100% !important;
+            left: 0 !important;
+          }
+          /* &:not(:hover) > ul {
+            display: none;
+          } */
+          ul {
+            display: none;
+            left: 100%;
+            position: absolute;
+            top: 0%;
+            z-index: 1;
+          }
+        }
+      }
     }
     /* DENSIDAD DE INFORMACIÓN */
     &.comfortable,

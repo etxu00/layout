@@ -34,6 +34,49 @@
       <span>Comodo</span>
     </label>
   </section>
+  <section>
+    <p>Modo de visualización</p>
+    <label>
+      <input type="radio" name="mode" value="" checked>
+      <span>Ninguno</span>
+    </label>
+    <label>
+      <input type="radio" name="mode" value="tree">
+      <span>Árbol</span>
+    </label>
+    <label>
+      <input type="radio" name="mode" value="menu">
+      <span>Menú</span>
+    </label>
+    <label>
+      <input type="radio" name="mode" value="dropdown">
+      <span>Menú emergente</span>
+    </label>
+    <label>
+      <input type="radio" name="mode" value="panel">
+      <span>Panel</span>
+    </label>
+    <label>
+      <input type="radio" name="mode" value="list">
+      <span>Lista</span>
+    </label>
+    <label>
+      <input type="radio" name="mode" value="carousel">
+      <span>Carousel</span>
+    </label>
+    <label>
+      <input type="radio" name="mode" value="grid">
+      <span>Grilla</span>
+    </label>
+    <label>
+      <input type="radio" name="mode" value="table">
+      <span>Tabla</span>
+    </label>
+    <label>
+      <input type="radio" name="mode" value="fullscreen">
+      <span>Pantalla completa</span>
+    </label>
+  </section>
   <nav data-layout="menu">
     <ul>
       <li>
@@ -75,11 +118,45 @@
           <svg class="icon"><use xlink:href="#config" /></svg>
           <span>Configuración</span>
         </a>
-        <ul hidden>
+        <ul>
           <li>
             <a href="#">
               <span>Densidad de información</span>
             </a>
+            <ul>
+              <li>
+                <a href="">Ninguno</a>
+              </li>
+              <li>
+                <a href="">Mínimo</a>
+              </li>
+              <li>
+                <a href="">Compacto</a>
+              </li>
+              <li>
+                <a href="">Normal</a>
+                <ul>
+                  <li>
+                    <a href="">
+                      <span>Muy cómodo</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      <span>Cómodo</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      <span>Poco cómodo</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="">Comodo</a>
+              </li>
+            </ul>
           </li>
           <li>
             <a href="#">
@@ -100,7 +177,7 @@
       </li>
       <li>
         <a href="#"><span>Ayuda</span></a>
-        <ul hidden>
+        <ul>
           <li><a href="#">Acerca de layouts</a></li>
           <li>
             <a href="#">

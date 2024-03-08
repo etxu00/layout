@@ -1,8 +1,16 @@
+const $ = selector => {
+  const tmp = document.querySelectorAll(selector)
+  if (!tmp.length) {
+    return null
+  }
+  return tmp.length === 1 ? tmp[0] : tmp
+}
+
 function init() {
-  console.info("init()")
-  const $menu = document.querySelector('[data-layout="menu"]');
-  const $inputRadio = document.querySelectorAll('input[type="radio"]');
-  $inputRadio.forEach((input) => {
+  const $menu = $('[data-layout="menu"]');
+  const $inputRadio = $('input[type="radio"]');
+  const $checkbox = $('input[type="checkbox"]');
+  $inputRadio.forEach(input => {
     input.addEventListener('change', event => {
       const value = event.target.value;
       const name = event.target.name;
@@ -13,6 +21,12 @@ function init() {
         $menu.classList.remove('menu', 'tree', 'dropdown', 'panel', 'list', 'carousel', 'grid', 'table', 'fullscreen');
       }
       $menu.classList.add(value ? value : '');
+    });
+  });
+  $checkbox.forEach(input => {
+    input.addEventListener('change', event => {
+      const className = event.target.value;
+      $menu.classList.toggle(className);
     });
   });
 }

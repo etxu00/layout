@@ -1,14 +1,29 @@
 :root {
+  --background: #f5f5f5;
   --color-hover: royalblue;
   --color: royalblue;
+  --text: #212121;
   --visited-color: DarkViolet;
+}
+
+/* MODO OSRURO 🌙 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #212121;
+    --text: #ffffff;
+    --visited-color: LightCoral;
+  }
 }
 
 html {
   font-family: Arial, Helvetica, sans-serif;
   body {
+    background-color: var(--background);
+    color: var(--text);
     margin: 0;
-  }
+    &:has(.panel) {
+      margin-left: 200px;
+    }
   [data-layout] {
     a {
       align-items: center;
@@ -23,6 +38,8 @@ html {
     span {
       white-space: nowrap;
     }
+    ul {
+      margin: 0}
     .icon {
       fill: currentColor;
       height: 1rem;
@@ -58,6 +75,43 @@ html {
             top: 0%;
             z-index: 1;
           }
+        }
+      }
+      &._show_submenus_indicators {
+        & > ul > li:has(a + ul):before {
+          transform: translateY(-50%) rotate(90deg);
+        }
+        li {
+          &:has(a + ul) {
+            padding-right: 1rem;
+            &:before {
+              content: '▶';
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              right: 0.25rem;
+              font-size: 0.5rem;
+            }
+          }
+        }
+      }
+    }
+    &.panel {
+      background-color: var(--background);
+      border-right: 1px solid transparent;
+      left: 0;
+      max-height: 100vh;
+      min-height: 100vh;
+      min-width: fit-content;
+      position: fixed;
+      top: 0;
+      z-index: 1;
+      &:hover {
+        overflow-y: auto;
+      }
+      li {
+        ul {
+          display: none;
         }
       }
     }

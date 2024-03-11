@@ -35,6 +35,25 @@
     </label>
   </section>
   <section>
+    <p>Diseño</p>
+    <label>
+      <input type="radio" name="style" value="" checked>
+      <span>Predeterminado</span>
+    </label>
+    <label>
+      <input type="radio" name="style" value="invert">
+      <span>Invertir colores</span>
+    </label>
+    <label>
+      <input type="radio" name="style" value="rounded">
+      <span>Redondeado</span>
+    </label>
+    <label>
+      <input type="radio" name="style" value="circle">
+      <span>Circular</span>
+    </label>
+  </section>
+  <section>
     <p>Modo de visualización</p>
     <label>
       <input type="radio" name="mode" value="" checked>
@@ -79,24 +98,28 @@
   </section>
   <section>
     <p>Opciones</p>
-    <label class="_menu">
+    <label class="_menu _panel" hidden>
       <input type="checkbox" value="_show_submenus_indicators">
       <span>Ver indicadores de submenús</span>
     </label>
-    <label class="_menu">
+    <label class="_menu" hidden>
       <input type="checkbox" value="_show_submenus_titles">
       <span>Mostrar títulos de los submenús</span>
     </label>
-    <label class="_panel">
+    <label class="_panel" hidden>
       <input type="checkbox" value="_offcanvas">
       <span>Ocultar menú</span>
     </label>
-    <label class="_panel">
+    <label class="_panel" hidden>
       <input type="checkbox" value="_collapse">
       <span>Comprimir menú</span>
     </label>
+    <label class="_panel" hidden>
+      <input type="checkbox" value="_right">
+      <span>Derecha</span>
+    </label>
   </section>
-  <nav class="min panel" data-layout="menu">
+  <nav class="" data-layout="menu">
     <ul>
       <li>
         <a href="#">
@@ -106,7 +129,7 @@
       </li>
       <li>
         <a href="#">
-          <svg class="icon"><use xlink:href="#play" /></svg>
+          <svg class="icon"><use xlink:href="#house-fill" /></svg>
           <span>Demostración</span>
         </a>
       </li>
@@ -199,19 +222,18 @@
       <li>
         <a href="#"><span>Ayuda</span></a>
         <ul>
-          <li><a href="#">Acerca de layouts</a></li>
+          <li><a href="#"><span>Acerca de layouts</span></a></li>
           <li>
             <a href="#">
               <svg class="icon"><use xlink:href="#plus-circle" /></svg>
               <span>Reportar un problema</span>
             </a>
           </li>
-          <li><a href="#">Notas de parche</a></li>
+          <li><a href="#"><span>Notas de parche</span></a></li>
         </ul>
       </li>
     </ul>
   </nav>
-
   <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" hidden>
     <symbol id="arrow" viewBox="0 0 16 16">
       <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />

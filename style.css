@@ -25,12 +25,14 @@ html {
       margin-left: 200px;
     }
   [data-layout] {
+    background-color: var(--background);
     a {
       align-items: center;
       color: inherit;
       display: flex;
       text-decoration: none;
       transition: padding .2s ease-in-out;
+      &.hover,
       &:hover {
         color: var(--color);
       }
@@ -45,7 +47,28 @@ html {
       height: 1rem;
       width: 1rem;
     }
+    /* ESTILOS DE LOS MENÚS */
+    &.circle a.hover,
+    &.circle a:hover,
+    &.rounded a.hover,
+    &.rounded a:hover,
+    &.invert a.hover,
+    &.invert a:hover {
+      background-color: var(--color-hover);
+      color: var(--background);
+    }
+    &.rounded a {
+      border-radius: .25rem;
+    }
+    &.circle a {
+      border-radius: 5rem;
+    }
     /* MODOS */
+    &.dropdown {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
     &.tree {
       ul {
         padding: 0 0 0 1rem !important;
@@ -85,12 +108,11 @@ html {
           &:has(a + ul) {
             padding-right: 1rem;
             &:before {
-              content: '▶';
+              content: '▸';
               position: absolute;
               top: 50%;
               transform: translateY(-50%);
               right: 0.25rem;
-              font-size: 0.5rem;
             }
           }
         }
@@ -109,10 +131,16 @@ html {
       &:hover {
         overflow-y: auto;
       }
-      li {
+      li:not(:hover) {
         ul {
           display: none;
         }
+      }
+      &._right {
+        border-left: 1px solid transparent;
+        border-right: none;
+        left: auto;
+        right: 0;
       }
     }
     /* DENSIDAD DE INFORMACIÓN */

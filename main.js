@@ -20,7 +20,11 @@ function init() {
       if (name === 'mode') {
         $menu.classList.remove('menu', 'tree', 'dropdown', 'panel', 'list', 'carousel', 'grid', 'table', 'fullscreen');
       }
+      if (name === 'style') {
+        $menu.classList.remove('invert', 'rounded', 'circle');
+      }
       $menu.classList.add(value ? value : '');
+      showOptions(value);
     });
   });
   $checkbox.forEach(input => {
@@ -29,6 +33,13 @@ function init() {
       $menu.classList.toggle(className);
     });
   });
+}
+
+function showOptions(value) {
+  const $labels = $(`label[class*="_"]`);
+  if ($labels.length) {
+    $labels.forEach(label => label.hidden = !label.classList.contains(`_${value}`));
+  }
 }
 
 document.addEventListener('DOMContentLoaded', function () {

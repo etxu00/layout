@@ -128,19 +128,30 @@ html {
       position: fixed;
       top: 0;
       z-index: 1;
-      &:hover {
-        overflow-y: auto;
-      }
-      li:not(:hover) {
-        ul {
-          display: none;
-        }
-      }
       &._right {
         border-left: 1px solid transparent;
         border-right: none;
         left: auto;
         right: 0;
+        li {
+          ul {
+            right: 100%;
+            left: auto;
+          }
+        }
+      }
+      li {
+        &:not(:hover) {
+          ul {
+            display: none;
+          }
+        }
+        ul {
+          background: var(--background);
+          left: 100%;
+          position: absolute;
+          top: 0;
+        }
       }
     }
     /* DENSIDAD DE INFORMACIÓN */
@@ -187,6 +198,25 @@ html {
         gap: 1rem;
         & > span:first-child {
           padding-left: 2rem;
+        }
+      }
+    }
+    /* OPCIONES COMPARTIDAS ENTRE MODOS */
+    &._show_submenus_indicators {
+      & > ul > li:has(a + ul):before {
+        transform: translateY(-50%) rotate(90deg);
+      }
+      li {
+        position: relative;
+        &:has(a + ul) {
+          padding-right: 1rem;
+          &:before {
+            content: '▸';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0.25rem;
+          }
         }
       }
     }

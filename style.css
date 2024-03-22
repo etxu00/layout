@@ -1,22 +1,30 @@
+/* Importar la fuente font.woff2 */
+@font-face {
+  font-family: 'Font';
+  src: url('font.woff2') format('woff2');
+}
+
 :root {
   --background: #f5f5f5;
   --color-hover: royalblue;
   --color: royalblue;
   --text: #212121;
   --visited-color: DarkViolet;
+  --color-scheme: '🌙';
 }
 
 /* MODO OSRURO 🌙 */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:has(.dark_light:not(:checked)) {
     --background: #212121;
     --text: #ffffff;
     --visited-color: LightCoral;
+    --color-scheme: '☀️';
   }
 }
 
 html {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Font", Arial, Helvetica, sans-serif;
   body {
     background-color: var(--background);
     color: var(--text);
@@ -221,4 +229,9 @@ html {
       }
     }
   }
+}
+
+
+label:has(.dark_light):after {
+  content: var(--color-scheme);
 }
